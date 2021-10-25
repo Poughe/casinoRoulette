@@ -20,16 +20,18 @@
 		<h1>Current Casino Earnings</h1>
 		
 		<% messages.forEach(el => {%>
-		  <span style="display: none;" id="objectId"><%=el._id%></span>
+		  	<span style="display:none;" id="objectId"><%=el._id%></span>
 			<h2 class="hide">$<%=el.value%></h2>
 			<h2 id="wins">Wins <br><br><%=el.wins%></h2>
 			<h2>Losses<br><br> <%=el.loss%></h2>
-			<h2>Money Lost<br><br> $<%=el.moneyWon%></h2>
-			<h2>Money Won<br><br> $<%=el.moneyLoss%></h2>
+			<h2>Money Lost<br><br> $<%=el.moneyLoss%></h2>
+			<h2>Money Won<br><br> $<%=el.moneyWon%></h2>
 			<%})%>
-			<button type="submit" id="reset" name="button">Reset Data</button>
+			<button type="button" id="reset" name="button">Reset Data</button>
 			<button type="submit" id="logout" name="button"><a href="/">Logout</button>
 		
+			<button style="display: none;" type="submit" class="resetBtn">New Player</button>
+			<button style="display: none;" type="button" class="submitBtn m-2 spin-button text-small btn btn-dark btn-block btn-lg"></button>
 
 		<script src="https://kit.fontawesome.com/c0e668a8ad.js" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/main.js"></script>

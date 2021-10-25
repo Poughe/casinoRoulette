@@ -1,21 +1,16 @@
 const bet = document.getElementsByClassName('betChoice');
 const reset = document.getElementById("reset")
-console.log(reset)
 const result = document.getElementById("result")
 const whoWon = document.getElementById("winner")
 
-document.querySelector(".resetBtn").addEventListener('click', resetPlayer)
+let revenue = 0
+let playeramount = 0
 
 function resetPlayer() {
     document.querySelector('#result').innerText = 0
     document.querySelector('.betAmount').value = 0
-
 }
 
-
-
-let revenue = 0
-let playeramount = 0
 
 Array.from(bet).forEach(button => {
     button.addEventListener('click', setValue)
@@ -24,22 +19,18 @@ function setValue(e) {
 
     let targetValue = e.target.value
 
-
     const betValue = document.querySelector('.betValue')
 
     betValue.value = targetValue
-    console.log(betValue.value);
+    // console.log(betValue.value);
 
 }
 
 
-document.querySelector('.submitBtn').addEventListener('click', runGame)
-// create a function 
 
 function runGame() {
     let amount = document.querySelector('.betAmount').value
     amount = Number(amount)
-    console.log(typeof amount)
 
     let betColor = document.querySelector('.betValue').value
     console.log(betColor)
@@ -104,22 +95,21 @@ function runGame() {
 }
 
 
-reset.addEventListener('click', resetGame)
 
 
-function resetGame() {
+function wipeGame() {
+    console.log("Lets start the WIPE")
     const objectIdElement = document.querySelector('#objectId')
     if (objectIdElement) {
         let objectId = document.querySelector('#objectId').innerText
-        console.log(objectId);
-        console.log("working");
+        console.log("Delete It All!")
         fetch('reset', {
-            method: 'DELETE',
+            method: 'delete',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                'id': objectId
+                id: objectId
 
             })
 
@@ -127,10 +117,16 @@ function resetGame() {
         }).then(response => {
             console.log(response)
             if (response.ok) {
-                console.log("window.reload")
                 return window.location.reload(true)
             }
         })
     }
 
 };
+
+document.querySelector(".resetBtn").addEventListener('click', resetPlayer)
+
+document.getElementById("reset").addEventListener('click', wipeGame)
+
+
+document.querySelector('.submitBtn').addEventListener('click', runGame)

@@ -9,7 +9,7 @@ module.exports = function (app, passport, db) {
     });
 
     // PROFILE SECTION =========================
-    app.get('/profile', /*isLoggedIn,*/ function (req, res) {
+    app.get('/profile', function (req, res) {
         const defaultResult = [{
             value: 0,
             wins: 0,
@@ -17,7 +17,6 @@ module.exports = function (app, passport, db) {
             moneyWon: 0,
             moneyLoss: 0,
         }]
-        console.log(req)
         db.collection('Roulette').find().toArray((err, result) => {
             if (err) return console.log(err)
             res.render('profile.ejs', {
@@ -127,9 +126,10 @@ module.exports = function (app, passport, db) {
 
 
     app.delete('/reset', (req, res) => {
-        db.collection('Roulette').findOneAndDelete({ name: req.body.name, msg: req.body.msg }, (err, result) => {
+        console.log("Nice we deleted it")
+        db.collection('Roulette').deleteMany({}, (err, result) => {
             if (err) return res.send(500, err)
-            res.send('Message deleted!')
+            res.send('Data deleted!')
         })
     })
 
