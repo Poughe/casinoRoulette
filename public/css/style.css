@@ -1,0 +1,102 @@
+#root{
+    background-image: url(../imgs/body.jpg)
+}
+ html{
+    /* background-color: black; */
+    background-image: url(../imgs/body.jpg)
+ } 
+ 
+ #middle{
+   display: flex;
+   justify-content:center;
+  /* width:35%;
+  float:left;
+  margin-right:8%;
+  padding:50px; */
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+#winner{
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 50px;
+}
+  .spinhov:active {
+    animation-name: spinning;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+
+  .betChoice{
+    border-radius:100px;
+    height:140px;
+    width:140px;
+    margin: .5%;
+  }
+
+  .betAmount{
+    width: 140px;
+    height: 50px;
+    margin-top: 50px;
+  }
+
+  .resetBtn{
+    width: 140px;
+    height: 50px;
+    margin-top: 50px;
+  }
+
+  #red:hover,
+  #black:hover,
+  #green:hover{
+    transform: scale(1.1);
+  }
+
+  #red:active,
+  #black:active,
+  #green:active,
+  button:active{
+    transform: scale(0.8);
+  }
+
+  #black{
+    background-image: url('/imgs/black.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:none;
+    color:rgba(0, 128, 0, 0);
+
+  }
+
+  #green{
+    background-image: url('/imgs/green.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:none;
+    color:rgba(0, 128, 0, 0);
+  }
+
+  #red{
+    background: url('/imgs/red.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:none;
+    color:rgba(128, 0, 0, 0);
+  }
+  
+
+  .betAmount{
+    padding:10px;
+  }
+

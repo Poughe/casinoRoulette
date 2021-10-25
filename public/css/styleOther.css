@@ -1,0 +1,79 @@
+body{
+    padding-top:80px;
+    word-wrap:break-word;
+  }
+  img{
+    height: 200px;
+  }
+
+  .profile h1{
+    color:black;
+    font-size:50px;
+    text-decoration: underline;
+  }
+
+  .profile{
+    background: gray;
+    color:white;
+    text-align: center;
+  }
+
+  .profile button{
+    font-weight: 100;
+    background:black;
+    color:white;
+  }
+
+  .profile h2{
+    border:2px solid white;
+    width:20%;
+    float:left;
+    margin:.8%;
+    height:250px;
+  }
+
+  .profile h2:hover{
+    transform:scale(1.1);
+  }
+
+  #wins{
+    margin-left:2.8%;
+  }
+
+  .profile button:active{
+    transform:scale(.6);
+  }
+
+  #reset{
+    margin-left:28%;
+  }
+
+  .profile button{
+    width:20%;
+    margin-top:10%;
+    font-size:30px;
+    float:left;
+    border: 3px solid white;
+  }
+
+  #logout
+  {
+    color:white;
+    text-decoration: none;
+    margin-left:2%;
+    background:black;
+  }
+  #logout a{
+    background:rgba(3, 114, 3, 0);
+    color:white;
+    text-decoration: none;
+  }
+
+  #logout:hover,
+  #reset:hover,
+  #logout a:hover{
+    background:red;
+  }
+
+
+ 
